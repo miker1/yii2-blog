@@ -9,7 +9,10 @@ $params = array_merge(
 return [
     'id' => 'app-console',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => [
+        'log',
+        'class' => 'common\bootstrap\SetUp'
+    ],
     'controllerNamespace' => 'console\controllers',
     'controllerMap' => [
         'fixture' => [
@@ -26,6 +29,16 @@ return [
                 ],
             ],
         ],
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+            'itemTable' => '{{%auth_items}}',
+            'itemChildTable' => '{{%auth_item_children}}',
+            'assignmentTable' => '{{%auth_assignments}}',
+            'ruleTable' => '{{%auth_rules}}',
+        ],
+
+        'backendUrlManager' => require __DIR__ . '/../../backend/config/urlManager.php',
+        'frontendUrlManager' => require __DIR__ . '/../../frontend/config/urlManager.php',
     ],
     'params' => $params,
 ];
