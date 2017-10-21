@@ -1,8 +1,8 @@
 <?php
 
-namespace shop\entities\Blog\Post\queries;
+namespace blog\entities\Blog\Post\queries;
 
-use shop\entities\Blog\Post\Post;
+use blog\entities\Blog\Post\Post;
 use yii\db\ActiveQuery;
 
 class PostQuery extends ActiveQuery

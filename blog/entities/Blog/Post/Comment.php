@@ -1,8 +1,8 @@
 <?php
 
-namespace shop\entities\Blog\Post;
+namespace blog\entities\Blog\Post;
 
-use shop\entities\Blog\Post\queries\PostQuery;
+use blog\entities\Blog\Post\queries\PostQuery;
 use yii\db\ActiveRecord;
 
 /**

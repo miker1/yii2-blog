@@ -18,7 +18,14 @@
         "yiisoft/yii2": "~2.0.6",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
-        "dmstr/yii2-adminlte-asset": "^2.5"
+        "dmstr/yii2-adminlte-asset": "^2.5",
+        "bower-asset/bootstrap": "^3.3",
+        "npm-asset/jquery": "^2.2",
+        "mihaildev/yii2-ckeditor": "*",
+        "la-haute-societe/yii2-save-relations-behavior": "*",
+        "yii-dream-team/yii2-upload-behavior": "*",
+        "kartik-v/yii2-widgets": "*",
+        "kartik-v/yii2-field-range": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

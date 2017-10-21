@@ -1,6 +1,6 @@
 <?php
 
-namespace shop\entities\Blog\Post;
+namespace blog\entities\Blog\Post;
 
 use yii\db\ActiveRecord;
 

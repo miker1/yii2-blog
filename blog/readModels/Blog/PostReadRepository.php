@@ -2,9 +2,9 @@
 
 namespace shop\readModels\Blog;
 
-use shop\entities\Blog\Category;
-use shop\entities\Blog\Post\Post;
-use shop\entities\Blog\Tag;
+use blog\entities\Blog\Category;
+use blog\entities\Blog\Post\Post;
+use blog\entities\Blog\Tag;
 use yii\data\ActiveDataProvider;
 use yii\data\DataProviderInterface;
 use yii\db\ActiveQuery;

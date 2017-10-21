@@ -6,7 +6,7 @@ return [
         '@npm' => '@vendor/npm-asset',
     ],
     'components' => [
-        'cache' => [
+        'cache'  => [
             'class' => 'yii\caching\FileCache',
             'cachePath' => '@common/runtime/cache',
         ],

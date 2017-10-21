@@ -2,7 +2,7 @@
 
 namespace shop\readModels\Blog;
 
-use shop\entities\Blog\Category;
+use blog\entities\Blog\Category;
 
 class CategoryReadRepository
 {

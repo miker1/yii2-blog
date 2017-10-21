@@ -1,4 +1,24 @@
+Options +FollowSymLinks
+<ifModule mod_headers.c>
+    Header set Cache-Control "no-store, no-cache, max-age=0"
+</ifModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "now"
+</IfModule>
+EnableSendfile off
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . index.php
+
+<IfModule mod_headers.c>
+	Header append Cache-Control "no-store, no-cache, must-revalidate"
+</IfModule>
+
+# Заголовок Expires
+<IfModule mod_expires.c>
+	ExpiresActive On
+	ExpiresDefault "now"
+</IfModule>

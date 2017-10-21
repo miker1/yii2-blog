@@ -1,9 +1,9 @@
 <?php
 
-namespace shop\entities\Blog;
+namespace blog\entities\Blog;
 
-use shop\entities\behaviors\MetaBehavior;
-use shop\entities\Meta;
+use blog\entities\behaviors\MetaBehavior;
+use blog\entities\Meta;
 use yii\db\ActiveRecord;
 
 /**

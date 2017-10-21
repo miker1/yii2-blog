@@ -2,7 +2,7 @@
 
 namespace shop\readModels\Blog;
 
-use shop\entities\Blog\Tag;
+use blog\entities\Blog\Tag;
 
 class TagReadRepository
 {

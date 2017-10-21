@@ -1,16 +1,16 @@
 <?php
 
-namespace shop\entities\Blog\Post;
+namespace blog\entities\Blog\Post;
 
-use shop\entities\Blog\Post\Comment;
+use blog\entities\Blog\Post\Comment;
 use lhs\Yii2SaveRelationsBehavior\SaveRelationsBehavior;
-use shop\entities\behaviors\MetaBehavior;
-use shop\entities\Blog\Post\queries\CommentQuery;
-use shop\entities\Blog\Post\queries\PostQuery;
-use shop\entities\Meta;
-use shop\entities\Blog\Category;
-use shop\entities\Blog\Tag;
-use shop\services\WaterMarker;
+use blog\entities\behaviors\MetaBehavior;
+use blog\entities\Blog\Post\queries\CommentQuery;
+use blog\entities\Blog\Post\queries\PostQuery;
+use blog\entities\Meta;
+use blog\entities\Blog\Category;
+use blog\entities\Blog\Tag;
+use blog\services\WaterMarker;
 use yii\db\ActiveQuery;
 use yii\db\ActiveRecord;
 use yii\web\UploadedFile;
@@ -18,6 +18,7 @@ use yiidreamteam\upload\ImageUploadBehavior;
 
 /**
  * @property integer $id
+ * @property integer $user_id
  * @property integer $category_id
  * @property integer $created_at
  * @property string $title
@@ -42,9 +43,10 @@ class Post extends ActiveRecord
 
     public $meta;
 
-    public static function create($categoryId, $title, $description, $content, Meta $meta): self
+    public static function create($userId, $categoryId, $title, $description, $content, Meta $meta): self
     {
         $post = new static();
+        $post->user_id = $userId;
         $post->category_id = $categoryId;
         $post->title = $title;
         $post->description = $description;
@@ -271,7 +273,7 @@ class Post extends ActiveRecord
                     'thumb' => ['width' => 640, 'height' => 480],
                     'blog_list' => ['width' => 1000, 'height' => 150],
                     'widget_list' => ['width' => 228, 'height' => 228],
-                    'origin' => ['processor' => [new WaterMarker(1024, 768, '@frontend/web/image/logo.png'), 'process']],
+                    //'origin' => ['processor' => [new WaterMarker(1024, 768, '@frontend/web/image/logo.png'), 'process']],
                 ],
             ],
         ];

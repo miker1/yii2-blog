@@ -8,6 +8,7 @@ return [
     'rules' => [
         '' => 'site/index',
         //'<_a:about>' => 'site/<_a>',
+        'about' =>'site/about',
         'contact' => 'contact/index',
         'signup' => 'auth/signup/request',
         'signup/<_a:[\w-]+>' => 'auth/signup/<_a>',
