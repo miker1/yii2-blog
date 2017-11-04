@@ -122,6 +122,7 @@ class PostManageService
         $post = $this->posts->get($id);
         $post->activate();
         $this->posts->save($post);
+        $this->postsCountByCategory($post);
     }
 
     public function draft($id): void
@@ -129,11 +130,20 @@ class PostManageService
         $post = $this->posts->get($id);
         $post->draft();
         $this->posts->save($post);
+        $this->postsCountByCategory($post);
     }
 
     public function remove($id): void
     {
         $post = $this->posts->get($id);
         $this->posts->remove($post);
+        $this->postsCountByCategory($post);
+    }
+
+    protected function postsCountByCategory($post): void
+    {
+        $category = $this->categories->get($post->category_id);
+        $category->postsCount();
+        $this->categories->save($category);
     }
 }

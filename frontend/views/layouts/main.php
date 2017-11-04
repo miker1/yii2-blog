@@ -15,9 +15,8 @@ AppAsset::register($this);
 	<!-- META TAGS -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
-	<meta name="author" content="Amine Akhouad">
-	<meta name="description" content="AKAD is a creative and modern template for digital agencies">
+	<meta name="author" content="">
+	<meta name="description" content="">
 
 	<?php $this->head() ?>
 </head>
@@ -26,31 +25,30 @@ AppAsset::register($this);
 	<!-- HEADER  -->
 	<header class="main-header">
 		<div class="container">
-			<div class="logo">
-				<a href="index.html"><img src="img/logo.png" alt="logo"></a>
-			</div>
+
 
 			<div class="menu">
 				<!-- desktop navbar -->
 				<nav class="desktop-nav">
 					<ul class="first-level">
-						<li><a href="index.php" class="animsition-link">Home</a></li>
-						<li><a href="about" class="animsition-link">about us</a></li>
-						<li><a href="contact" class="animsition-link">services</a></li>
-						<li><a href="">portfolio</a>
+                        <?php if (Yii::$app->user->isGuest): ?>
+                            <li><a href="<?= Html::encode(Url::to(['/auth/auth/login'])) ?>" class="animsition-link">Login</a></li>
+                            <li><a href="<?= Html::encode(Url::to(['/auth/signup/request'])) ?>" class="animsition-link">Signup</a></li>
+
+                        <?php else: ?>
+						<li><a href="">cabinet</a>
 							<ul class="second-level">
-								<li><a href="portfolio-1.html" class="animsition-link">portfolio list</a></li>
-								<li><a href="single-project.html" class="animsition-link">single project 1</a></li>
-								<li><a href="single-project-2.html" class="animsition-link">single project 2</a></li>
+							<?php if (\Yii::$app->user->can('author')):?>
+								<li><a href="<?= Html::encode(Url::to(['/cabinet/default/index'])) ?>" class="animsition-link">Cabinet</a></li>
+							<?php endif; ?>
+								<li><a href="<?= Html::encode(Url::to(['/auth/auth/logout'])) ?>" class="animsition-link">Logout</a></li>
 							</ul>
 						</li>
-						<li><a href="">blog</a>
-							<ul class="second-level">
-								<li><a href="blog-1.html" class="animsition-link">posts list</a></li>
-								<li><a href="single-post.html" class="animsition-link">single post</a></li>
-							</ul>
-						</li>
-						<li><a href="contact.html" class="animsition-link">contact us</a></li>
+                        <?php endif; ?>
+						<li><a href="<?= Html::encode(Url::to(['/site/index'])) ?>" class="animsition-link">Home</a></li>
+						<li><a href="<?= Html::encode(Url::to(['/site/about'])) ?>" class="animsition-link">about us</a></li>
+						<li><a href="<?= Html::encode(Url::to(['/blog/post/index'])) ?>" class="animsition-link">blog</a></li>
+						<li><a href="<?= Html::encode(Url::to(['/contact/index'])) ?>" class="animsition-link">contact us</a></li>
 					</ul>
 				</nav>
 				<!-- mobile navbar -->
@@ -66,24 +64,6 @@ AppAsset::register($this);
 
 	<!-- HERO SECTION-->
 	<div class="site-hero">
-		<!--
-		<ul class="slides">
-			<li>
-				<div><span class="small-title uppercase montserrat-text">we're</span></div>
-				<div class="big-title uppercase montserrat-text">digital agency</div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua.</p>
-			</li>
-			<li>
-				<div><span class="small-title uppercase montserrat-text">we do</span></div>
-				<div class="big-title uppercase montserrat-text">creative stuff</div>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				consequat. </p>
-			</li>
-		</ul>
-		-->
 	</div>
 <?= $content ?>
 	<!-- FOOTER -->
@@ -93,12 +73,11 @@ AppAsset::register($this);
 				<div class="row">
 					<nav class="footer-nav">
 						<ul>
-							<li><a href="index.html" class="animsition-link link">Home</a></li>
-							<li><a href="about.html" class="animsition-link link">about us</a></li>
-							<li><a href="services.html" class="animsition-link link">services</a></li>
-							<li><a href="portfolio-1.html" class="animsition-link link">portfolio</a></li>
-							<li><a href="blog-1.html" class="animsition-link link">blog</a></li>
-							<li><a href="contact.html" class="animsition-link link">contact us</a></li>
+							<li><a href="<?= Html::encode(Url::to(['/site/index'])) ?>" class="animsition-link link">Home</a></li>
+							<li><a href="<?= Html::encode(Url::to(['/site/about'])) ?>" class="animsition-link link">about us</a></li>
+							<li><a href="<?= Html::encode(Url::to(['/blog/post/index'])) ?>" class="animsition-link link">blog</a></li>
+							<li><a href="<?= Html::encode(Url::to(['/contact/index'])) ?>" class="animsition-link link">contact us</a></li>
+
 						</ul>
 					</nav>
 				</div>
@@ -126,7 +105,9 @@ AppAsset::register($this);
 
 <?php $this->endBody() ?>
 <!-- script -->
+
 <? $this->registerJs($js); ?>
+
 </body>
 </html>
 <?php $this->endPage() ?>

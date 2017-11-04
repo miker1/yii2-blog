@@ -1,6 +1,6 @@
 <?php
 
-namespace shop\readModels\Blog;
+namespace blog\readModels\Blog;
 
 use blog\entities\Blog\Category;
 use blog\entities\Blog\Post\Post;
@@ -27,6 +27,18 @@ class PostReadRepository
         return $this->getProvider($query);
     }
 
+    public function getAllPosts(): DataProviderInterface
+    {
+        $query = Post::find()->active()->with('category');
+        return new ActiveDataProvider([
+            'query' => $query,
+            'sort' => false,
+            'pagination' => [
+                'pagesize' => 5,
+            ],
+        ]);
+    }
+
     public function getAllByCategory(Category $category): DataProviderInterface
     {
         $query = Post::find()->active()->andWhere(['category_id' => $category->id])->with('category');
@@ -44,16 +56,17 @@ class PostReadRepository
 
     public function getLast($limit): array
     {
-        return Post::find()->with('category')->orderBy(['id' => SORT_DESC])->limit($limit)->all();
+        return Post::find()->active()->with('category')->orderBy(['id' => SORT_DESC])->limit($limit)->all();
     }
 
     public function getPopular($limit): array
     {
-        return Post::find()->with('category')->orderBy(['comments_count' => SORT_DESC])->limit($limit)->all();
+        return Post::find()->active()->with('category')->orderBy(['comments_count' => SORT_DESC])->limit($limit)->all();
     }
 
     public function find($id): ?Post
     {
+
         return Post::find()->active()->andWhere(['id' => $id])->one();
     }
 
@@ -62,6 +75,9 @@ class PostReadRepository
         return new ActiveDataProvider([
             'query' => $query,
             'sort' => false,
+            'pagination' => [
+                'pagesize' => 1,
+            ],
         ]);
     }
 }

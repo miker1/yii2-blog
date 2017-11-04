@@ -10,28 +10,25 @@ use yii\bootstrap\ActiveForm;
 $this->title = 'Signup';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-signup">
-    <h1><?= Html::encode($this->title) ?></h1>
+<div class="container">
+    <div class="agency">
+        <div class="col-md-5 col-sm-12">
 
-    <p>Please fill out the following fields to signup:</p>
-
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
-
+        </div>
+        <div class="col-md-offset-1 col-md-6 col-sm-12">
+            <div class="row">
+                <div class="section-title">
+                    <span>SignUp</span>
+                </div>
+                <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
                 <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
-
                 <?= $form->field($model, 'email') ?>
-
-                <?//= $form->field($model, 'phone', ['addon' => ['prepend' => ['content'=>'+']]]) ?>
-
                 <?= $form->field($model, 'password')->passwordInput() ?>
 
-                <div class="form-group">
-                    <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
-                </div>
+                <?= Html::submitButton('Signup', ['class' => 'btn pink', 'name' => 'signup-button']) ?>
 
-            <?php ActiveForm::end(); ?>
+                <?php ActiveForm::end(); ?>
+            </div>
         </div>
     </div>
 </div>

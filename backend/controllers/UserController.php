@@ -2,11 +2,11 @@
 
 namespace backend\controllers;
 
-use shop\forms\manage\User\UserCreateForm;
-use shop\forms\manage\User\UserEditForm;
-use shop\useCases\manage\UserManageService;
+use blog\forms\manage\User\UserCreateForm;
+use blog\forms\manage\User\UserEditForm;
+use blog\useCases\manage\UserManageService;
 use Yii;
-use shop\entities\User\User;
+use blog\entities\User;
 use backend\forms\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -125,6 +125,34 @@ class UserController extends Controller
     {
         $this->service->remove($id);
         return $this->redirect(['index']);
+    }
+
+    /**
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionActivate($id)
+    {
+        try {
+            $this->service->activate($id);
+        } catch (\DomainException $e) {
+            Yii::$app->session->setFlash('error', $e->getMessage());
+        }
+        return $this->redirect(['view', 'id' => $id]);
+    }
+
+    /**
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionDraft($id)
+    {
+        try {
+            $this->service->draft($id);
+        } catch (\DomainException $e) {
+            Yii::$app->session->setFlash('error', $e->getMessage());
+        }
+        return $this->redirect(['view', 'id' => $id]);
     }
 
     /**

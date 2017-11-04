@@ -12,8 +12,8 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
-        //'css/bootstrap.min.css',
+        //'css/site.css',
+        'css/bootstrap.min.css',
 	    'css/ionicons.min.css',
         //'css/flexslider.css',
         'css/animsition.min.css',
@@ -29,6 +29,7 @@ class AppAsset extends AssetBundle
         'js/wow.min.js',
         'js/main.js',
         'js/smooth.js',
+        //'js/comment.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

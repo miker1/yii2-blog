@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\DataProviderInterface */
-/* @var $category shop\entities\Blog\Category */
+/* @var $category blog\entities\Blog\Category */
 
 use yii\helpers\Html;
 

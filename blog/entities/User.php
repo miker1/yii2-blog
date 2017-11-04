@@ -97,15 +97,38 @@ class User extends ActiveRecord
         $this->password_reset_token = null;
     }
 
+    public function activate(): void
+    {
+        if ($this->isActive()) {
+            throw new \DomainException('Post is already active.');
+        }
+        $this->status = self::STATUS_ACTIVE;
+    }
+
+    public function draft(): void
+    {
+        if ($this->isDraft()) {
+            throw new \DomainException('Post is already draft.');
+        }
+        $this->status = self::STATUS_WAIT;
+    }
+
+    public function isActive(): bool
+    {
+        return $this->status == self::STATUS_ACTIVE;
+    }
+
+
+    public function isDraft(): bool
+    {
+        return $this->status == self::STATUS_WAIT;
+    }
+
     public function isWait(): bool
     {
         return $this->status === self::STATUS_WAIT;
     }
 
-    public function isActive(): bool
-    {
-        return $this->status === self::STATUS_ACTIVE;
-    }
 
     /**
      * @inheritdoc

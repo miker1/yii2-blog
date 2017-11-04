@@ -54,8 +54,8 @@ class UserManageService
         $user = $this->repository->get($id);
         $user->edit(
             $form->username,
-            $form->email,
-			$form->phone
+            $form->email
+			//$form->phone
         );
         $this->transaction->wrap(function () use ($user, $form) {
             $this->repository->save($user);
@@ -74,5 +74,19 @@ class UserManageService
         $user = $this->repository->get($id);
         $this->repository->remove($user);
 		$this->newsletter->unsubscribe($user->email);
+    }
+
+    public function activate($id): void
+    {
+        $user = $this->repository->get($id);
+        $user->activate();
+        $this->repository->save($user);
+    }
+
+    public function draft($id): void
+    {
+        $user = $this->repository->get($id);
+        $user->draft();
+        $this->repository->save($user);
     }
 }

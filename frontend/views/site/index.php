@@ -26,7 +26,7 @@ $this->title = 'My Yii Application';
                     consequat. in reprehenderit in voluptate velit esse
                     cillum dolore eu fugiat nulla pariatur.
                 </p>
-                <a href="#" class="btn green" style="float:right;margin-top:30px"><span>read more</span></a>
+                <a href="#" class="btn pink" style="float:right;margin-top:30px"><span>read more</span></a>
             </div>
         </div>
     </div>

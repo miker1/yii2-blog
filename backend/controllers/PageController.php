@@ -2,10 +2,10 @@
 
 namespace backend\controllers;
 
-use shop\forms\manage\PageForm;
-use shop\useCases\manage\PageManageService;
+use blog\forms\manage\PageForm;
+use blog\useCases\manage\PageManageService;
 use Yii;
-use shop\entities\Page;
+use blog\entities\Page;
 use backend\forms\PageSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;

@@ -58,6 +58,7 @@ class CommentSearch extends Model
         $query->andFilterWhere([
             'id' => $this->id,
             'post_id' => $this->post_id,
+            'active' => $this->active,
         ]);
 
         $query

@@ -1,6 +1,6 @@
 <?php
 
-use shop\entities\Blog\Post\Comment;
+use blog\entities\Blog\Post\Comment;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 use yii\helpers\StringHelper;

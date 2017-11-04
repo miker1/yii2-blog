@@ -1,8 +1,8 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $post shop\entities\Blog\Post\Post */
-/* @var $model \shop\forms\Blog\CommentForm */
+/* @var $post blog\entities\Blog\Post\Post */
+/* @var $model \blog\forms\Blog\CommentForm */
 
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
@@ -27,7 +27,7 @@ $this->params['active_category'] = $post->category;
 <?= $form->field($model, 'text')->textarea(['rows' => 5]) ?>
 
 <div class="form-group">
-    <?= Html::submitButton('Send own comment', ['class' => 'btn btn-primary']) ?>
+    <?= Html::submitButton('Send own comment', ['class' => 'btn pink']) ?>
 </div>
 
 <?php ActiveForm::end(); ?>

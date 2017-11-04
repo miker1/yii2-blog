@@ -1,11 +1,11 @@
 <?php
 
-namespace shop\useCases\Blog;
+namespace blog\useCases\Blog;
 
-use shop\entities\Blog\Post\Comment;
-use shop\forms\Blog\CommentForm;
-use shop\repositories\Blog\PostRepository;
-use shop\repositories\UserRepository;
+use blog\entities\Blog\Post\Comment;
+use blog\forms\Blog\CommentForm;
+use blog\repositories\Blog\PostRepository;
+use blog\repositories\UserRepository;
 
 class CommentService
 {

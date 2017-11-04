@@ -63,7 +63,6 @@ class Post extends ActiveRecord
         $this->photo = $photo;
     }
 
-
     public function edit($categoryId, $title, $description, $content, Meta $meta): void
     {
         $this->category_id = $categoryId;
@@ -273,6 +272,8 @@ class Post extends ActiveRecord
                     'thumb' => ['width' => 640, 'height' => 480],
                     'blog_list' => ['width' => 1000, 'height' => 150],
                     'widget_list' => ['width' => 228, 'height' => 228],
+                    'origin' => ['width' => 640, 'height' => 480],
+                    'lasts_posts' => ['width' => 50, 'height' => 50],
                     //'origin' => ['processor' => [new WaterMarker(1024, 768, '@frontend/web/image/logo.png'), 'process']],
                 ],
             ],

@@ -42,6 +42,8 @@
 					['label' => 'Files', 'icon' => 'file-o', 'url' => ['/file/index'], 'active' => $this->context->id == 'file'],
 					]],
 
+                    ['label' => 'Users', 'icon' => 'users', 'url' => ['/user/index'], 'active' => $this->context->id == 'user/index'],
+
                 ],
             ]
         ) ?>

@@ -14,6 +14,12 @@ return [
         'common\bootstrap\SetUp',
         'frontend\bootstrap\SetUp',
     ],
+
+    'aliases' => [
+        '@staticRoot' => $params['staticPath'],
+        '@static'   => $params['staticHostInfo'],
+    ],
+
     'controllerNamespace' => 'frontend\controllers',
 
     'components' => [

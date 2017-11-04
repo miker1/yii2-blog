@@ -1,11 +1,11 @@
 <?php
 
 use kartik\file\FileInput;
-use shop\entities\Blog\Post\Modification;
-use shop\entities\Blog\Post\Value;
-use shop\helpers\PriceHelper;
-use shop\helpers\PostHelper;
-use shop\helpers\WeightHelper;
+//use blog\entities\Blog\Post\Modification;
+//use blog\entities\Blog\Post\Value;
+//use blog\helpers\PriceHelper;
+use blog\helpers\PostHelper;
+//use blog\helpers\WeightHelper;
 use yii\bootstrap\ActiveForm;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
@@ -14,8 +14,8 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $post shop\entities\Blog\Post\Post */
-/* @var $comment shop\entities\Blog\Post\Comment */
+/* @var $post blog\entities\Blog\Post\Post */
+/* @var $comment blog\entities\Blog\Post\Comment */
 /* @var $modificationsProvider yii\data\ActiveDataProvider */
 
 $this->title = $post->title;
@@ -51,7 +51,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'model' => $comment,
                 'attributes' => [
                     'id',
-                    'created_at:boolean',
+                    'created_at:datetime',
                     'active:boolean',
                     'user_id',
                     'parent_id',

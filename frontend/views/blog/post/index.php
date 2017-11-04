@@ -2,12 +2,12 @@
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\DataProviderInterface */
-/* @var $category shop\entities\Shop\Category */
+/* @var $category blog\entities\Blog\Category */
 
 use yii\helpers\Html;
 
-$this->title = 'Blog';
-$this->params['breadcrumbs'][] = $this->title;
+//$this->title = 'Blog';
+//$this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <h1><?= Html::encode($this->title) ?></h1>

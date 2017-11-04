@@ -1,6 +1,6 @@
 <?php
 
-namespace shop\readModels\Blog;
+namespace blog\readModels\Blog;
 
 use blog\entities\Blog\Tag;
 

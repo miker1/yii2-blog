@@ -42,7 +42,7 @@ class PostController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = $this->posts->getAll();
+        $dataProvider = $this->posts->getAllPosts();
 
         return $this->render('index', [
             'dataProvider' => $dataProvider,
@@ -119,11 +119,12 @@ class PostController extends Controller
         if ($form->load(Yii::$app->request->post()) && $form->validate()) {
             try {
                 $comment = $this->service->create($post->id, Yii::$app->user->id, $form);
-                return $this->redirect(['post', 'id' => $post->id, '#' => 'comment_' . $comment->id]);
+
             } catch (\DomainException $e) {
                 Yii::$app->errorHandler->logException($e);
                 Yii::$app->session->setFlash('error', $e->getMessage());
             }
+            return $this->redirect(['post', 'id' => $post->id, '#' => 'comment_' . $comment->id]);
         }
 
         return $this->render('comment', [
