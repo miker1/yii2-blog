@@ -1,6 +1,6 @@
 <?php
 
-namespace shop\repositories;
+namespace blog\repositories;
 
 use blog\entities\Page;
 

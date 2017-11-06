@@ -76,7 +76,7 @@ class PostReadRepository
             'query' => $query,
             'sort' => false,
             'pagination' => [
-                'pagesize' => 1,
+                'pagesize' => 5,
             ],
         ]);
     }

@@ -10,4 +10,9 @@ class TagReadRepository
     {
         return Tag::findOne($id);
     }
+
+    public function findAll($limit = null): array
+    {
+        return Tag::find()->orderBy('id')->limit($limit)->all();
+    }
 }

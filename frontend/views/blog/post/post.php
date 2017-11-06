@@ -27,38 +27,7 @@ use yii\helpers\Html;
                 'URI.SafeIframeRegexp'=>'%^(https?:)?//(www\.youtube(?:-nocookie)?\.com/embed/|player\.vimeo\.com/video/)%',
             ]) ?>
         </p>
-        <!--
-        <ul class="list" style="margin:30px 0">
-            <li>consectetur adipisicing</li>
-            <li>Sit eum consequatur</li>
-            <li>Deserunt quisquam aperiam</li>
-            <li>dolorum maiores, cumque eligendi</li>
-            <li>Lorem ipsum dolor sit amet</li>
-        </ul>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia sint placeat praesentium dolorum minima, et laborum similique cupiditate minus nemo qui tempore corporis eum quisquam harum perferendis saepe tempora ipsum. Quia sint placeat praesentium dolorum minima, et laborum similique cupiditate minus nemo qui tempore corporis eum quisquam harum perferendis saepe tempora ipsum. Quia sint placeat praesentium dolorum minima, et laborum similique cupiditate minus nemo qui tempore corporis eum quisquam harum perferendis saepe tempora ipsum. Quia sint placeat praesentium dolorum minima, et laborum similique cupiditate minus nemo qui tempore corporis eum quisquam harum perferendis saepe tempora ipsum.
-        </p>
-        <blockquote class="bq" style="margin:30px 0">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia sint placeat praesentium dolorum minima, et laborum similique cupiditate minus nemo qui tempore corporis eum quisquam harum perferendis saepe tempora ipsum.
-        </blockquote>
-        <div class="row">
-            <div class="col-md-6">
-                <img src="<? //= Html::encode($post->getThumbFileUrl('photo', 'origin')) ?>" alt="image">
-            </div>
-            <div class="col-md-6">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia sint placeat praesentium dolorum minima, et laborum similique cupiditate minus nemo qui tempore corporis eum quisquam harum perferendis saepe tempora ipsum. Quia sint placeat praesentium dolorum minima, et laborum similique cupiditate minus nemo qui tempore corporis eum quisquam harum perferendis saepe tempora ipsum.
-                </p>
-                <ul class="list" style="margin:30px 0">
-                    <li>consectetur adipisicing</li>
-                    <li>Sit eum consequatur</li>
-                    <li>Deserunt quisquam aperiam</li>
-                    <li>dolorum maiores, cumque eligendi</li>
-                    <li>Lorem ipsum dolor sit amet</li>
-                </ul>
-            </div>
-        </div>
-        -->
+
     </div>
 <!-- end col -->
 <?= CommentsWidget::widget([

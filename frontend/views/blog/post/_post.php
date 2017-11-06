@@ -8,19 +8,7 @@ use yii\helpers\Url;
 
 $url = Url::to(['post', 'id' =>$model->id]);
 ?>
-<?/**
-<div class="blog-posts-item">
-    <?php if ($model->photo): ?>
-        <div>
-            <a href="<?= Html::encode($url) ?>">
-                <img src="<?= Html::encode($model->getThumbFileUrl('photo', 'blog_list')) ?>" alt="" class="img-responsive" />
-            </a>
-        </div>
-    <?php endif; ?>
-    <div class="h2"><a href="<?= Html::encode($url) ?>"><?= Html::encode($model->title) ?></a></div>
-    <p><?= Yii::$app->formatter->asNtext($model->description) ?></p>
-</div>
-*/?>
+
 
 <!-- blog post-->
 
@@ -34,9 +22,9 @@ $url = Url::to(['post', 'id' =>$model->id]);
                     <div class="post_info">
                         <div class="post_date montserrat-text uppercase"><?= Yii::$app->formatter->asDatetime($model->created_at); ?></div>
                         <i class="icon ion-chatbox-working"></i>
-                        <span>8</span>
+                        <span><?= Html::encode($model->comments_count) ?></span>
                         <i class="icon ion-ios-heart"></i>
-                        <span>15</span>
+                        <span>nothing</span>
                     </div>
                     <p>
                         <?= Html::encode($model->title) ?>

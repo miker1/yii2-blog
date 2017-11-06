@@ -5,20 +5,6 @@
 
 ?>
 
-
-
-
-        <?/**= \yii\widgets\ListView::widget([
-            'dataProvider' => $dataProvider,
-            'layout' => "{items}\n{pager}",
-            'itemView' => '_post',
-                'itemOption' => [
-
-
-                ],
-
-        ]) */?>
-
 <?=\yii\widgets\ListView::widget([
     'dataProvider' => $dataProvider,
     'layout' => "{items}\n{pager}",

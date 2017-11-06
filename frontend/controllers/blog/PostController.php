@@ -132,4 +132,15 @@ class PostController extends Controller
             'model' => $form,
         ]);
     }
+/**
+    public function actionPostsByName($id)
+    {
+        $tag = $this->tags->find($id);
+        $dataProvider = $this->posts->getAllByTag($tag);
+
+        return $this->render('posts-tag', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+ */
 }

@@ -16,20 +16,21 @@ $this->params['breadcrumbs'][] = $category->name;
 
 $this->params['active_category'] = $category;
 ?>
-
-<h1><?= Html::encode($category->getHeadingTile()) ?></h1>
-
 <?php if (trim($category->description)): ?>
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <?= Yii::$app->formatter->asHtml($category->description, [
-                'Attr.AllowedRel' => array('nofollow'),
-                'HTML.SafeObject' => true,
-                'Output.FlashCompat' => true,
-                'HTML.SafeIframe' => true,
-                'URI.SafeIframeRegexp'=>'%^(https?:)?//(www\.youtube(?:-nocookie)?\.com/embed/|player\.vimeo\.com/video/)%',
-            ]) ?>
-        </div>
+<div class="single_post">
+
+    <div class="post_title">
+        <h4 class="montserrat-text uppercase"><?= Html::encode($category->getHeadingTile()) ?></h4>
+    </div>
+    <p>
+        <?= Yii::$app->formatter->asHtml($category->description, [
+            'Attr.AllowedRel' => array('nofollow'),
+            'HTML.SafeObject' => true,
+            'Output.FlashCompat' => true,
+            'HTML.SafeIframe' => true,
+            'URI.SafeIframeRegexp'=>'%^(https?:)?//(www\.youtube(?:-nocookie)?\.com/embed/|player\.vimeo\.com/video/)%',
+        ]) ?>
+    </p>
     </div>
 <?php endif; ?>
 

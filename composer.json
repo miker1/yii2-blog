@@ -25,7 +25,9 @@
         "la-haute-societe/yii2-save-relations-behavior": "*",
         "yii-dream-team/yii2-upload-behavior": "*",
         "kartik-v/yii2-widgets": "*",
-        "kartik-v/yii2-field-range": "dev-master"
+        "kartik-v/yii2-field-range": "dev-master",
+        "mihaildev/yii2-elfinder": "*",
+        "paulzi/yii2-nested-sets": "^1.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
