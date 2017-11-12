@@ -1,4 +1,4 @@
-$(window).load(function() {
+$(window).on('load', function() {
     new WOW().init();
 
     /** initialise flexslider

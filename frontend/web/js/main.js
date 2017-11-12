@@ -5,7 +5,7 @@
 */
 
 (function($){
-	$(window).load(function(){
+	$(window).on('load', function(){
 		// INITIALIZE ANIMSITION
 		if($(".animsition").length){
 			$(".animsition").animsition({
